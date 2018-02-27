@@ -37,7 +37,7 @@ public class PathBetweenNodes {
 
         IntStream.range(0,3).forEach(i -> {
             ConsoleUtil.println("Finding path from "+src.get(i).value + " to "+ dst.get(i).value);
-            ConsoleUtil.println("Path found:"+pathBetweenNodes(GraphUtil.getExampleGraph(src.get(i).value),dst.get(i)));
+            ConsoleUtil.println("Path found:"+pathBetweenNodes(GraphUtil.getExampleDAG(src.get(i).value), dst.get(i)));
         });
     }
 }

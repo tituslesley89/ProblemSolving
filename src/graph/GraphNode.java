@@ -43,17 +43,6 @@ public class GraphNode {
         ConsoleUtil.println("AdjNodes"+sb.toString());
     }
 
-    public void printGraph() {
-        Queue<GraphNode> q = new LinkedList<>();
-        q.add(this);
-
-        while(!q.isEmpty()) {
-            GraphNode cur = q.remove();
-            cur.printInfo();
-            q.addAll(cur.getAdj());
-        }
-    }
-
     public boolean equals(Object o) {
         if(!(o instanceof GraphNode)) {
             return false;
