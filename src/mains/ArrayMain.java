@@ -2,6 +2,7 @@ package mains;
 
 import util.ArrayUtil;
 import util.ConsoleUtil;
+import util.RandomUtil;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -33,6 +34,29 @@ public class ArrayMain {
             ConsoleUtil.printArray(arr);
             ConsoleUtil.newline();
             ConsoleUtil.print("Result:"+arryToIntAlgo.apply(arr));
+            ConsoleUtil.newline();
+            ConsoleUtil.newline();
+        });
+    }
+
+    public static void FindSequenceInArray(Consumer<List<Integer>> consumerFunction) {
+        FindSequenceHelper(consumerFunction, false);
+    }
+
+    public static void FindSequenceInNegativeArray(Consumer<List<Integer>> consumerFunction) {
+        FindSequenceHelper(consumerFunction, true);
+    }
+
+    public static void  FindSequenceHelper(Consumer<List<Integer>> consumer, boolean hasNegative) {
+        List<List<Integer>> inputArrays = ArrayUtil.generateListOfRandomArrays(hasNegative);
+
+        ConsoleUtil.println("Running function: " + consumer.getClass().getName());
+        inputArrays.stream().forEach(arr -> {
+            ConsoleUtil.print("Array:");
+            ConsoleUtil.printArray(arr);
+            ConsoleUtil.newline();
+            ConsoleUtil.print("Result:");
+            consumer.accept(arr);
             ConsoleUtil.newline();
             ConsoleUtil.newline();
         });
