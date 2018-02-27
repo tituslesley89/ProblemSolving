@@ -10,7 +10,7 @@ import java.util.function.Function;
 public class ArrayMain {
 
     public static void runSortingArray(Function<List<Integer>, List<Integer>> sortingAlgo) {
-        List<List<Integer>> inputArrays = ArrayUtil.generateListOfRandomArrays();
+        List<List<Integer>> inputArrays = ArrayUtil.generateListOfRandomArrays(false);
 
         ConsoleUtil.println("Sorting using: " + sortingAlgo.getClass().getName());
         inputArrays.stream().forEach(arr -> {
@@ -25,7 +25,7 @@ public class ArrayMain {
     }
 
     public static void ArraysToInt(Function<List<Integer>, Integer> arryToIntAlgo) {
-        List<List<Integer>> inputArrays = ArrayUtil.generateListOfRandomArrays();
+        List<List<Integer>> inputArrays = ArrayUtil.generateListOfRandomArrays(false);
 
         ConsoleUtil.println("Running function: " + arryToIntAlgo.getClass().getName());
         inputArrays.stream().forEach(arr -> {
@@ -39,7 +39,7 @@ public class ArrayMain {
     }
 
     public static void ArraysToVoid(Consumer<List<Integer>> consumer) {
-        List<List<Integer>> inputArrays = ArrayUtil.generateListOfRandomArrays();
+        List<List<Integer>> inputArrays = ArrayUtil.generateListOfRandomArrays(false);
 
         ConsoleUtil.println("Running function: " + consumer.getClass().getName());
         inputArrays.stream().forEach(arr -> {
