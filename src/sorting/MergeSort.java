@@ -67,7 +67,6 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        Function<List<Integer>, List<Integer>> sortingAlgo = MergeSort::mergeSort;
-        ArrayMain.runSortingArray(sortingAlgo);
+        ArrayMain.runSortingArray(MergeSort::mergeSort);
     }
 }

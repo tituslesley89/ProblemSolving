@@ -2,7 +2,6 @@ package mains;
 
 import util.ArrayUtil;
 import util.ConsoleUtil;
-import util.RandomUtil;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -15,26 +14,20 @@ public class ArrayMain {
 
         ConsoleUtil.println("Sorting using: " + sortingAlgo.getClass().getName());
         inputArrays.stream().forEach(arr -> {
-            ConsoleUtil.print("Unsorted array:");
-            ConsoleUtil.printArray(arr);
-            ConsoleUtil.newline();
-            ConsoleUtil.print("Sorted Array:");
-            ConsoleUtil.printArray(sortingAlgo.apply(arr));
-            ConsoleUtil.newline();
+            ConsoleUtil.printArrayWithMessage(arr, "Unsorted array:");
+            ConsoleUtil.printArrayWithMessage(sortingAlgo.apply(arr), "Sorted Array:");
             ConsoleUtil.newline();
         });
     }
 
-    public static void ArraysToInt(Function<List<Integer>, Integer> arryToIntAlgo) {
+    public static void runSortingArray(Consumer<List<Integer>> sortingAlgo) {
         List<List<Integer>> inputArrays = ArrayUtil.generateListOfRandomArrays(false);
 
-        ConsoleUtil.println("Running function: " + arryToIntAlgo.getClass().getName());
+        ConsoleUtil.println("Sorting using: " + sortingAlgo.getClass().getName());
         inputArrays.stream().forEach(arr -> {
-            ConsoleUtil.print("Array:");
-            ConsoleUtil.printArray(arr);
-            ConsoleUtil.newline();
-            ConsoleUtil.print("Result:"+arryToIntAlgo.apply(arr));
-            ConsoleUtil.newline();
+            ConsoleUtil.printArrayWithMessage(arr, "Unsorted array:");
+            sortingAlgo.accept(arr);
+            ConsoleUtil.printArrayWithMessage(arr, "Sorted Array:");
             ConsoleUtil.newline();
         });
     }
@@ -52,24 +45,11 @@ public class ArrayMain {
 
         ConsoleUtil.println("Running function: " + consumer.getClass().getName());
         inputArrays.stream().forEach(arr -> {
+
             ConsoleUtil.print("Array:");
             ConsoleUtil.printArray(arr);
             ConsoleUtil.newline();
             ConsoleUtil.print("Result:");
-            consumer.accept(arr);
-            ConsoleUtil.newline();
-            ConsoleUtil.newline();
-        });
-    }
-
-    public static void ArraysToVoid(Consumer<List<Integer>> consumer) {
-        List<List<Integer>> inputArrays = ArrayUtil.generateListOfRandomArrays(false);
-
-        ConsoleUtil.println("Running function: " + consumer.getClass().getName());
-        inputArrays.stream().forEach(arr -> {
-            ConsoleUtil.print("Array:");
-            ConsoleUtil.printArray(arr);
-            ConsoleUtil.newline();
             consumer.accept(arr);
             ConsoleUtil.newline();
             ConsoleUtil.newline();

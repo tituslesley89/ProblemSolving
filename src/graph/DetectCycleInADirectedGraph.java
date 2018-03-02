@@ -43,6 +43,5 @@ public class DetectCycleInADirectedGraph {
         ConsoleUtil.newline();
         ConsoleUtil.println("Checking DCG:");
         ConsoleUtil.println("Has cycle:"+findCycle(directedCyclicGraph));
-
     }
 }

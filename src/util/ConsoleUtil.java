@@ -23,4 +23,10 @@ public class ConsoleUtil {
         });
         print("}");
     }
+
+    public static void printArrayWithMessage(List<Integer> arr, String msg) {
+        print(msg);
+        printArray(arr);
+        newline();
+    }
 }

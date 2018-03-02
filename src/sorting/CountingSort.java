@@ -15,6 +15,7 @@ public class CountingSort {
         IntStream.range(0,size+1).forEach(i -> {
             arr.add(0);
         });
+
         return arr;
     }
 
@@ -56,7 +57,6 @@ public class CountingSort {
     }
 
     public static void main(String[] args) {
-        Function<List<Integer>, List<Integer>> sortingAlgo = CountingSort::countingSort;
-        ArrayMain.runSortingArray(sortingAlgo);
+        ArrayMain.runSortingArray(CountingSort::countingSort);
     }
 }
