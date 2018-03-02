@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FindMaxiumPossibleActivites {
+public class FindMaximumPossibleActivites {
 
     private static int findMaxiumPossibilities(List<Activity> activities) {
         if(activities.size() == 1) {
