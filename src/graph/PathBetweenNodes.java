@@ -1,5 +1,6 @@
 package graph;
 
+import graph.helpers.GraphNode;
 import util.ConsoleUtil;
 import util.GraphUtil;
 
@@ -36,8 +37,8 @@ public class PathBetweenNodes {
                 new GraphNode("C"));
 
         IntStream.range(0,3).forEach(i -> {
-            ConsoleUtil.println("Finding path from "+src.get(i).value + " to "+ dst.get(i).value);
-            ConsoleUtil.println("Path found:"+pathBetweenNodes(GraphUtil.getExampleDAG(src.get(i).value), dst.get(i)));
+            ConsoleUtil.println("Finding path from "+src.get(i).getValue() + " to "+ dst.get(i).getValue());
+            ConsoleUtil.println("Path found:"+pathBetweenNodes(GraphUtil.getExampleDAG(src.get(i).getValue()), dst.get(i)));
         });
     }
 }

@@ -1,6 +1,6 @@
 package util;
 
-import graph.GraphNode;
+import graph.helpers.GraphNode;
 import util.graphconfig.DirectedAcyclicGraph1;
 import util.graphconfig.DirectedCyclicGrap1;
 import util.graphconfig.GraphConfig;
