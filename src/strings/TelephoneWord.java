@@ -1,5 +1,7 @@
 package strings;
 
+import util.ConsoleUtil;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,7 +23,28 @@ public class TelephoneWord {
         }
     }
 
-    public static void main(String[] args) {
+    private static void telephoneWordHelper(String word, String remNum) {
+        if(remNum.isEmpty()) {
+            ConsoleUtil.println(word);
+            return;
+        }
 
+        int curNum = Integer.parseInt(remNum.charAt(0)+"");
+        List<Character> listOfCharacters = getCharactersForNumber(curNum);
+
+        listOfCharacters.forEach(chr -> {
+            String newWord = word + chr;
+            String newRemNumber = remNum.substring(1,remNum.length());
+            telephoneWordHelper(newWord, newRemNumber);
+        });
+    }
+
+    private static void telephoneNumber(String s) {
+        telephoneWordHelper("",s);
+    }
+
+    public static void main(String[] args) {
+        String number = "4971927";
+        telephoneNumber(number);
     }
 }
